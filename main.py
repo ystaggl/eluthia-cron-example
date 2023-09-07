@@ -33,16 +33,10 @@ def send_email(email_host, email_port, user, password, email_from, email_to, ema
 
 
 def main():
-    with open('/var/lib/badtrack/secrets.env','r') as f:
-        text = f.read()
-        entries = text.split('\n')
-        email_user = entries[0].split(' = ')[1]
-        email_password = entries[1].split(' = ')[1]
-
     email_host = 'relay.mailbaby.net'
     email_port = '465'
-    user = email_user
-    password = email_password
+    user = os.environ['EMAIL_USER']
+    password = os.environ['EMAIL_PASSWORD']
     email_from = 'sender@obsi.com.au'
     email_to = 'robinchew@gmail.com'
     send_email(email_host,email_port,user,password,email_from,email_to,'Hello','Cron example email')
