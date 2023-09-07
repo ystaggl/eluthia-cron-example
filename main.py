@@ -38,15 +38,13 @@ def main():
         entries = text.split('\n')
         email_user = entries[0].split(' = ')[1]
         email_password = entries[1].split(' = ')[1]
-        print(email_user)
-        print(email_password)
 
     email_host = 'relay.mailbaby.net'
     email_port = '465'
     user = email_user
     password = email_password
     email_from = 'sender@obsi.com.au'
-    email_to = 'yannstaggl@gmail.com'
+    email_to = 'robinchew@gmail.com'
     send_email(email_host,email_port,user,password,email_from,email_to,'Hello','Cron example email')
     return
 
